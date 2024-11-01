@@ -1,5 +1,17 @@
 /*============== TABLE OF CONTENTS ============== 
-
-
-
+1. Button CSS
 ==================================================*/
+
+/*----------------------------------------
+1. Button CSS
+------------------------------------------*/
+
+/* Custom color for the button outline */
+.btn-custom-outline {
+    color: #5E3BEE;
+    border-color: #5E3BEE;
+}
+.btn-custom-outline:hover {
+    background-color: #5E3BEE;
+    color: #fff;
+}

@@ -5,69 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Navbar</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index.css">    
     <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/comonents.css">
+    <link rel="stylesheet" href="./css/landing.css">
     <style>
-        /* Custom color for the button outline */
-        .btn-custom-outline {
-            color: #5E3BEE;
-            border-color: #5E3BEE;
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .btn-custom-outline:hover {
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        /* Container styling */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            width: 100%;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        /* Left side content */
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 .highlight {
+            color: #5E3BEE;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .hero-text .cta-button {
+            padding: 0.75rem 2rem;
             background-color: #5E3BEE;
             color: #fff;
-        }
-
-        /* Overlay sidebar styles for mobile */
-        .overlay {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.9); /* semi-transparent background */
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            color: #fff;
-        }
-        
-        .overlay-content {
-            position: relative;
-            top: 30%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .overlay-content a {
-            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
             text-decoration: none;
-            font-size: 1.5rem;
-            color: #fff;
-            transition: 0.3s;
         }
 
-        .overlay-content a:hover {
-            color: #5E3BEE;
+        .hero-text .cta-button:hover {
+            background-color: #4a2dbd;
         }
 
-        .overlay-content .btn-custom-outline {
-            margin-top: 20px;
-            align-self: flex-end;
+        /* Right side image */
+        .hero-image {
+            position: relative;
+            max-width: 45%;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
-        .close_btn {
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        /* Decorative elements */
+        .decorative-icon {
             position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 2rem;
+            color: #5E3BEE;
+            font-size: 1.5rem;
         }
 
-        /* Roboto font */
-        body, .nav-link, .btn {
-            font-family: "Roboto", sans-serif;
+        .icon-top-left {
+            top: 10%;
+            left: -20px;
+        }
+
+        .icon-bottom-right {
+            bottom: 10%;
+            right: -20px;
         }
     </style>
 </head>
@@ -119,6 +161,29 @@
             <button class="btn btn-custom-outline" type="button">Contact Me</button>
         </div>
     </div>
+
+
+
+    <section class="hero-section">
+        <!-- Left side content -->
+        <div class="hero-text">
+            <h2>Hey, I am John</h2>
+            <h1>I create <span class="highlight">product design</span> and brand experience</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+            <a href="#" class="cta-button">Get In Touch</a>
+        </div>
+
+        <!-- Right side image -->
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/400x400" alt="John's Portrait">
+            <!-- Decorative icons -->
+            <span class="decorative-icon icon-top-left">✨</span>
+            <span class="decorative-icon icon-bottom-right">✨</span>
+        </div>
+    </section>
+
+
+
 
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script>

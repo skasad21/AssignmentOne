@@ -1,5 +1,31 @@
 /*============== TABLE OF CONTENTS ============== 
-
-
-
+1. base css 
+2. Font 
 ==================================================*/
+
+/*---------------------------------------
+1. base css 
+-----------------------------------------*/
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+}
+
+*{
+    box-sizing: border-box;
+    line-height: normal;
+    font-family: inherit;
+    margin: unset;
+}
+
+/*---------------------------------------
+2. Font
+-----------------------------------------*/
+/* Roboto font */
+body, .nav-link, .btn {
+    font-family: "Roboto", sans-serif;
+}
+
+

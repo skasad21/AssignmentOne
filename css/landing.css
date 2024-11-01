@@ -1,5 +1,64 @@
 /*============== TABLE OF CONTENTS ============== 
-
-
-
+1. Common Css
+2. Page Css
 ==================================================*/
+
+/*-------------------------------------------------
+    1. Common Css
+--------------------------------------------------*/
+
+
+
+
+/*-------------------------------------------------
+    2. Page Css
+--------------------------------------------------*/
+
+/* Overlay sidebar styles for mobile */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* semi-transparent background */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: #fff;
+}
+
+.overlay-content {
+    position: relative;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overlay-content a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.overlay-content a:hover {
+    color: #5E3BEE;
+}
+
+.overlay-content .btn-custom-outline {
+    margin-top: 20px;
+    align-self: flex-end;
+}
+
+.close_btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+}
+/* Overlay sidebar styles for mobile */
+

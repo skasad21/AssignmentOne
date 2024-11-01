@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Navbar Styles */
+        .btn-custom-outline {
+            color: #5E3BEE;
+            border-color: #5E3BEE;
+        }
+        .btn-custom-outline:hover {
+            background-color: #5E3BEE;
+            color: #fff;
+        }
+
+        /* Overlay Sidebar for Mobile */
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-x: hidden;
+            transition: 0.5s;
+            z-index: 1000;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay-content a, .overlay-content button {
+            padding: 8px;
+            font-size: 20px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay-content a:hover, .overlay-content button:hover {
+            color: #5E3BEE;
+        }
+
+        .close_btn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 60px 15px;
+            background-color: #F0F8FF;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: #5E3BEE;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            color: #6c757d;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .hero-image {
+            max-width: 50%;
+            margin-left: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .hero-image {
+                max-width: 80%;
+            }
+            .navbar-toggler {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+        }
+
+    /*New*/
+
+    /* Expertise Section */
+    .expertise-section {
+        padding: 60px 15px;
+        background-color: #F8F9FA;
+        width: 100%;
+        min-height: 70vh;
+    }
+
+    .expertise-section .container {
+        max-width: 1600px; /* Adjusts to match the width of the hero section */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .expertise-section h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .expertise-section p.subtitle {
+        color: #6c757d;
+        margin-bottom: 20px;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .card-expertise {
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f1f8ff;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        text-align: left; /* Left-align the text */
+    }
+
+    .card-expertise:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Bottom border on hover with rounded edges */
+    .card-expertise::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 4px;
+        background-color: #5E3BEE;
+        border-radius: 10px;
+        transition: width 0.3s ease, left 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .card-expertise:hover::after {
+        width: 90%; /* Adjusts width of the bottom border */
+        left: 50%;
+    }
+
+    .card-expertise img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    .card-expertise h5 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .card-expertise p {
+        color: #6c757d;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .expertise-section {
+            text-align: center;
+        }
+        .card-expertise {
+            text-align: center; /* Center-align cards on smaller screens */
+        }
+        .expertise-section h2, .expertise-section p.subtitle {
+            text-align: center; /* Center-align title and subtitle */
+        }
+    }
+
+
+    /* About Section */
+    .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 60px 15px;
+        background-color: #FAFAFA;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .about-image {
+        max-width: 50%;
+        margin-right: 20px;
+    }
+
+    .about-content {
+        max-width: 600px;
+    }
+
+    .about-content p:first-of-type {
+        font-weight: bold;
+        color: #121213;
+        margin-bottom: 5px;
+    }
+
+    .about-content h2 {
+        font-weight: 700;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .about-content p {
+        font-size: 1.1rem;
+        margin-top: 10px;
+        color: #6c757d;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .about-section {
+            flex-direction: column;
+            text-align: center;
+        }
+        .about-content {
+            text-align: left;
+        }
+        .about-image {
+            max-width: 80%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .about-image img {
+        width: 80%; /* Reduce to a percentage of the parent container or set a fixed size */
+        max-width: 850px; /* You can set a maximum width if needed */
+        height: auto; /* Keeps the aspect ratio intact */
+    }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Left side icon -->
+            <a class="navbar-brand" href="#">
+                <img src="./public/images/Logo.png" alt="Logo" width="187" height="40">
+            </a>
+
+            <!-- Middle navigation links for large screens -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Testimonial</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right side button for large screens -->
+            <button class="btn btn-custom-outline d-none d-lg-block" type="button">Contact Me</button>
+
+            <!-- Burger icon for mobile -->
+            <button class="navbar-toggler" type="button" onclick="openNav()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Overlay Sidebar for Mobile View -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="close_btn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">Home</a>
+            <a href="#">Portfolio</a>
+            <a href="#">About Me</a>
+            <a href="#">Testimonial</a>
+            <button class="btn btn-custom-outline" type="button">Contact Me</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section container-fluid d-flex">
+
+            <div class="hero-content">
+                <p>Hey, I am John</p>
+                <h1>I create <span>product design</span> and brand experience</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                <button class="btn btn-custom-outline mt-3">Get In Touch</button>
+            </div>
+            <div class="hero-image">
+                <img src="./public/images/HeroSectionImage.png" alt="Profile Picture">
+            </div>
+   
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section container-fluid border">
+        <div class="container">
+            <div class="text-start mb-5">
+                <p class="subtitle">My Skills</p>
+                <h2>My Expertise</h2>
+            </div>
+            <div class="row">
+                <!-- Expertise Card 1 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-expertise p-4 text-start">
+                        <img src="./public/images/product-chain.png" alt="Strategy & Direction Icon">
+                        <h5>Strategy & Direction</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    </div>
+                </div>
+
+                <!-- Expertise Card 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-expertise p-4 text-start">
+                        <img src="./public/images/tag.png" alt="Branding & Logo Icon">
+                        <h5>Branding & Logo</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    </div>
+                </div>
+
+                <!-- Expertise Card 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-expertise p-4 text-start">
+                        <img src="./public/images/feather-pen2.png" alt="UI & UX Design Icon">
+                        <h5>UI & UX Design</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    </div>
+                </div>
+
+                <!-- Expertise Card 4 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-expertise p-4 text-start">
+                        <img src="./public/images/feather-pen1.png" alt="Webflow Development Icon">
+                        <h5>Webflow Development</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section container-fluid d-flex">
+        <div class="about-image">
+            <img src="./public/images/AboutMePic.png" alt="About Image">
+        </div>
+        <div class="about-content">
+            <p>About</p>
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat.</p>
+        </div>
+    </section>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
