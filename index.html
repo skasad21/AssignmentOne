@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Navbar</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <style>
+        /* Custom color for the button outline */
+        .btn-custom-outline {
+            color: #5E3BEE;
+            border-color: #5E3BEE;
+        }
+        .btn-custom-outline:hover {
+            background-color: #5E3BEE;
+            color: #fff;
+        }
+
+        /* Overlay sidebar styles for mobile */
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9); /* semi-transparent background */
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            color: #fff;
+        }
+        
+        .overlay-content {
+            position: relative;
+            top: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .overlay-content a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .overlay-content a:hover {
+            color: #5E3BEE;
+        }
+
+        .overlay-content .btn-custom-outline {
+            margin-top: 20px;
+            align-self: flex-end;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+        }
+
+        /* Roboto font */
+        body, .nav-link, .btn {
+            font-family: "Roboto", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Left side icon -->
+            <a class="navbar-brand" href="#">
+                <img src="./public/images/Logo.png" alt="Logo" width="187" height="40">
+            </a>
+
+            <!-- Middle navigation links for large screens -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Testimonial</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right side button for large screens -->
+            <button class="btn btn-custom-outline d-none d-lg-block" type="button">Contact Me</button>
+
+            <!-- Burger icon for mobile -->
+            <button class="navbar-toggler" type="button" onclick="openNav()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Overlay sidebar for mobile view -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">Home</a>
+            <a href="#">Portfolio</a>
+            <a href="#">About Me</a>
+            <a href="#">Testimonial</a>
+            <button class="btn btn-custom-outline" type="button">Contact Me</button>
+        </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+        /* Functions to open and close the overlay sidebar */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+/*============== TABLE OF CONTENTS ============== 
+1. Font face declaration
+==================================================*/
+
+/*---------------------------------
+    1. Font face declaration
+-----------------------------------*/
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src:url("../public/fonts/Roboto-Regular.ttf");
+    font-family: "Roboto";
+    font-weight: 400;
+}
+
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src:url("../public/fonts/Roboto-Bold.ttf");
+    font-family: "Roboto";
+    font-weight: 700;
+}
