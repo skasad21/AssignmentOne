@@ -285,6 +285,127 @@
     }
 
 
+
+
+    /* Portfolio Section */
+    .portfolio-section {
+        padding: 60px 15px;
+        background-color: #fff;
+    }
+
+    .portfolio-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .portfolio-header .portfolio-text h4 {
+        color: #6c757d;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .portfolio-header .portfolio-text h2 {
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin: 0;
+    }
+
+    .portfolio-header .portfolio-text p {
+        font-weight: bold;
+    }
+
+    .dribbble-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #E62872;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .dribbble-icon {
+        margin-right: 8px;
+    }
+
+    .portfolio-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .portfolio-item {
+        flex: 1 1 30%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+        transform: translateY(-10px);
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .portfolio-content {
+        padding: 20px;
+        background-color: #f1f8ff;
+    }
+
+    .portfolio-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .portfolio-content p {
+        color: #6c757d;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .dribbble-link {
+        color: #141313;
+        text-decoration: none;
+        /* font-weight: bold; */
+        font-size: 1rem;
+    }   
+
+    .dribbble-link .dribbble-link-span{
+        padding-bottom: 10px;
+        border-bottom: 2px solid #5E3BEE;
+        line-height: 60px;
+    }
+
+    .dribbble-link .arrow {
+        background: transparent; /* Ensure no background color */
+    }
+
+    /* Responsive adjustments for Portfolio Section */
+    @media (max-width: 992px) {
+        .portfolio-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .portfolio-gallery {
+            flex-direction: column;
+        }
+        .portfolio-item {
+            flex: 1 1 100%;
+        }
+    }
+
+
     </style>
 </head>
 <body>
@@ -351,6 +472,7 @@
             </div>
    
     </section>
+    <!-- Hero Section -->
 
     <!-- Expertise Section -->
     <section class="expertise-section container-fluid border">
@@ -398,7 +520,7 @@
             </div>
         </div>
     </section>
-
+    <!-- Expertise Section -->
 
     <!-- About Section -->
     <section class="about-section container-fluid d-flex">
@@ -412,6 +534,48 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat.</p>
         </div>
     </section>
+    <!-- About Section -->
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section container">
+        <div class="portfolio-header">
+            <div class="portfolio-text">
+                <p>Recent Projects</p>
+                <!-- <h4>Recent Projects</h4> -->                
+                <h2>My Portfolio</h2>
+            </div>
+            <a href="https://dribbble.com/yourprofile" class="dribbble-button" target="_blank">
+                <span class="dribbble-icon">🌐</span> Visit My Dribbble
+            </a>
+        </div>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item">
+                <img src="./public/images/Ahuse.png" alt="Ahuse Project">
+                <div class="portfolio-content">
+                    <h3>Ahuse</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                    <a href="https://dribbble.com" target="_blank" class="dribbble-link"><span class="dribbble-link-span">View in Dribbble</span>&nbsp;<span class="arrow">&#8599;</span></a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./public/images/AppDashboard.png" alt="App Dashboard">
+                <div class="portfolio-content">
+                    <h3>App Dashboard</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                    <a href="https://dribbble.com" target="_blank" class="dribbble-link"><span class="dribbble-link-span">View in Dribbble</span>&nbsp;<span class="arrow">&#8599;</span></a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./public/images/EasyRent.png" alt="Easy Rent">
+                <div class="portfolio-content">
+                    <h3>Easy Rent</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                    <a href="https://dribbble.com" target="_blank" class="dribbble-link"><span class="dribbble-link-span">View in Dribbble</span>&nbsp;<span class="arrow">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- Portfolio Section -->
 
 
     <script>
