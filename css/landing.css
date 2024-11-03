@@ -14,51 +14,101 @@
     2. Page Css
 --------------------------------------------------*/
 
-/* Overlay sidebar styles for mobile */
+
+/* Overlay Sidebar for Mobile */
 .overlay {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
     top: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.8);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
-    color: #fff;
+    z-index: 1000;
 }
 
 .overlay-content {
     position: relative;
-    top: 30%;
+    top: 25%;
+    width: 100%;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
+    color: #fff;
 }
 
+/* Style for overlay links */
 .overlay-content a {
-    padding: 15px;
-    text-decoration: none;
-    font-size: 1.5rem;
     color: #fff;
-    transition: 0.3s;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
 }
 
 .overlay-content a:hover {
-    color: #5E3BEE;
+    color: var(--brightblue);
 }
 
-.overlay-content .btn-custom-outline {
-    margin-top: 20px;
-    align-self: flex-end;
-}
-
+/* Close button */
 .close_btn {
     position: absolute;
     top: 20px;
-    right: 25px;
-    font-size: 2rem;
+    right: 35px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
 }
-/* Overlay sidebar styles for mobile */
+/* Overlay Sidebar for Mobile */
+
+  .active{
+    color: var(--brightblue) !important;
+  }
+  .nav-link:hover{
+    color: var(--brightblue) !important;
+  }
+  /* <!-- ==============background color================= --> */
+  .section-bg{
+    background-color: #F5FCFF !important;
+  }
+
+  /* <!-- ==============card icon SECTION================= --> */
+  .icon-section .card:hover{
+    border-bottom: 2px solid var(--brightblue) !important;
+  }
+  /* ==============Portfolio SECTION=================  */
+  .btn-danger{
+    background-color: #E62872 !important;
+  }
+  .portfolio-btn .btn-img{
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+  /* <!-- ==============Testimonials SECTION================= --> */
+  .testimonials .profile{
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* <!-- ==============contact SECTION================= --> */
+  
+  .contact .btn-outline-primary{
+    border: 1px solid var(--brightblue);
+    color: var(--brightblue);
+  }
+  .contact .btn-outline-primary:hover{
+    background-color: transparent;
+    color: var(--brightblue) !important;
+  }
+
+
+  .footer-top-nav .nav-link{
+    color: #1C1E53 !important;
+  }
+
+  .footer-nav .nav-link{
+    color: #1C1E53 !important;
+  }
 

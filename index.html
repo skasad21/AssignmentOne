@@ -3,198 +3,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Navbar</title>
+    <title>Portfolio Page</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/index.css">    
-    <link rel="stylesheet" href="./css/font.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/comonents.css">
-    <link rel="stylesheet" href="./css/landing.css">
-    <style>
-        /* Basic reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link href="./css/font.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/comonents.css" rel="stylesheet">
+    <link href="./css/landing.css" rel="stylesheet">
+    <link href="./css/animation.css" rel="stylesheet">
 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f8ff;
-            color: #333;
-        }
-
-        /* Container styling */
-        .hero-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            width: 100%;
-            padding: 2rem;
-            gap: 2rem;
-        }
-
-        /* Left side content */
-        .hero-text {
-            max-width: 50%;
-        }
-
-        .hero-text h2 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-text h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .hero-text h1 .highlight {
-            color: #5E3BEE;
-        }
-
-        .hero-text p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            color: #555;
-        }
-
-        .hero-text .cta-button {
-            padding: 0.75rem 2rem;
-            background-color: #5E3BEE;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-            text-decoration: none;
-        }
-
-        .hero-text .cta-button:hover {
-            background-color: #4a2dbd;
-        }
-
-        /* Right side image */
-        .hero-image {
-            position: relative;
-            max-width: 45%;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 20px;
-        }
-
-        /* Decorative elements */
-        .decorative-icon {
-            position: absolute;
-            color: #5E3BEE;
-            font-size: 1.5rem;
-        }
-
-        .icon-top-left {
-            top: 10%;
-            left: -20px;
-        }
-
-        .icon-bottom-right {
-            bottom: 10%;
-            right: -20px;
-        }
-    </style>
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <!-- Left side icon -->
-            <a class="navbar-brand" href="#">
-                <img src="./public/images/Logo.png" alt="Logo" width="187" height="40">
-            </a>
 
-            <!-- Middle navigation links for large screens -->
-            <div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Testimonial</a>
-                    </li>
-                </ul>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg shadow-sm navbar-light bg-white">
+            <div class="container">
+                <!-- Left side icon -->
+                <a class="navbar-brand" href="#">
+                    <img src="./public/images/Logo.png" alt="Logo" width="187" height="40">
+                </a>
+
+                <!-- Middle navigation links for large screens -->
+                <div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Testimonial</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right side button for large screens -->
+                <button class="btn btn-custom-outline d-none d-lg-block" type="button">Contact Me</button>
+
+                <!-- Burger icon for mobile -->
+                <button class="navbar-toggler" type="button" onclick="openNav()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
+        </nav>
 
-            <!-- Right side button for large screens -->
-            <button class="btn btn-custom-outline d-none d-lg-block" type="button">Contact Me</button>
-
-            <!-- Burger icon for mobile -->
-            <button class="navbar-toggler" type="button" onclick="openNav()">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- Overlay Sidebar for Mobile View -->
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="close_btn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#">Home</a>
+                <a href="#">Portfolio</a>
+                <a href="#">About Me</a>
+                <a href="#">Testimonial</a>
+                <button class="btn btn-custom-outline mx-auto" type="button">Contact Me</button>
+            </div>
         </div>
-    </nav>
+    </header>
+    <!-- HEADER SECTION -->
 
-    <!-- Overlay sidebar for mobile view -->
-    <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="close_btn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
-            <a href="#">Home</a>
-            <a href="#">Portfolio</a>
-            <a href="#">About Me</a>
-            <a href="#">Testimonial</a>
-            <button class="btn btn-custom-outline" type="button">Contact Me</button>
+    <!-- MAIN -->
+    <main>
+        <!-- HERO -->
+        <section class="home h-100 py-5 section-bg mt-md-0 mt-sm-0" id="home">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2 row-cols-md-2 g-3 gy-sm-5 d-flex justify-content-center align-items-center py-5">
+                    <div class="col">
+                        <div class="home-content">
+                            <div class="home-text pe-5">
+                                <p class="fw-semibold fade-in">Hey, I am John</p>
+                                <h1 class="fw-bold fs-1 slide-in-left">I create <span class="text-primary">product design</span> and brand experience</h1>
+                                <p class="slide-in-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                                <a href="#" class="btn btn-primary py-2 px-3 mt-2 fade-in">Get In Touch</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="home-img">
+                            <img src="./public/images/HeroSectionImage.png" alt="" class="img-fluid slide-in-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- HERO -->
+
+        <!-- MY EXPERTISE -->
+        <section class="icon-section h-100 py-5 mt-5">
+            <div class="container">
+                <div class="icons-title">
+                    <p class="fw-semibold fade-in">My Skills</p>
+                    <h1 class="fw-bold slide-in-left">My Expertise</h1>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 g-md-4 mt-5">
+                    <div class="col">
+                        <div class="card p-1 section-bg border-0 fade-in shadow-sm">
+                            <div class="card-body">
+                                <div class="box-img">
+                                    <img src="./public/images/product-chain.png" alt="" class="icon-box-image w-25 h-25 bg-white p-2 rounded-4">
+                                </div>
+                                <div class="content mt-3">
+                                    <h5 class="fw-bold mb-3">Strategy & Direction</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card p-2 section-bg border-0 fade-in shadow-sm">
+                            <div class="card-body">
+                                <div class="box-img">
+                                    <img src="./public/images/tag.png" alt="" class="icon-box-image w-25 h-25 bg-white p-2 rounded-4">
+                                </div>
+                                <div class="content mt-3">
+                                    <h5 class="fw-bold mb-3">Branding & Logo</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card p-2 section-bg border-0 fade-in shadow-sm">
+                            <div class="card-body">
+                                <div class="box-img">
+                                    <img src="./public/images/feather-pen2.png" alt="" class="icon-box-image w-25 h-25 bg-white p-2 rounded-4">
+                                </div>
+                                <div class="content mt-3">
+                                    <h5 class="fw-bold mb-3">UI & UX Design</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card p-2 section-bg border-0 fade-in shadow-sm">
+                            <div class="card-body">
+                                <div class="box-img">
+                                    <img src="./public/images/feather-pen1.png" alt="" class="icon-box-image w-25 h-25 bg-white p-2 rounded-4">
+                                </div>
+                                <div class="content mt-3">
+                                    <h5 class="fw-bold mb-3">Webflow Development</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        <!-- MY EXPERTISE -->
+
+        <!-- ABOUT ME -->
+        <section class="about-me h-100 py-5 mt-5" id="about-me">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2 row-cols-md-2 g-3 gy-sm-5 d-flex justify-content-center align-items-center">
+                    <div class="col">
+                        <div class="about-img mt-5 mt-lg-0 fade-in">
+                            <img src="./public/images/AboutMePic.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="about-content ms-lg-5 ms-0 mt-5 mt-lg-0">
+                            <p class="fw-semibold fade-in">About</p>
+                            <h1 class="fw-bold fs-1 fade-in">About Me</h1>
+                            <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis. Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque.</p>
+                            <p class="fade-in" style="animation-delay: 0.2s;">Sit turpis pretium eget maecenas. Vestibulum dolor mattis consectetur eget commodo vitae. Amet pellentesque sit pulvinar lorem mi a, euismod risus r.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        <!-- ABOUT ME -->
+
+        <!-- MY PORTFOLIO -->
+        <section class="portfolio h-100 py-5 mt-5" id="portfolio">
+           <div class="container">
+            <!-- ==============portfolio-top-item================= -->
+            <div class="d-lg-flex d-md-flex d-sm-flex justify-content-between align-items-center">
+              <div class="portfolio-title">
+                <p class="fw-semibold">Recent Projects</p>
+                <h1 class="fw-bold">My Portfolio</h1>
+              </div>
+              <div class="portfolio-btn">
+                <a href="" class="btn btn-danger text-white py-2 px-3 mt-4 mt-lg-0"><img src="./public/images/Socialicon.png" class="btn-img" alt="Dribbble icon"> Visit My Dribbble</a>
+              </div>
+            </div>
+             <!-- ======= row ========== -->
+             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 mt-5">
+               <div class="col">
+                  <div class="card border-0 shadow">
+                    <img src="./public/images/Ahuse.png" alt="" class="img-fluid">
+                    <div class="card-body">
+                       <h5 class="fw-semibold">Ahuse</h5>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                       <a href="#" target="_blank" class="btn p-0 fw-semibold border-0 rounded-0 border-bottom border-primary pb-1">View In Dribbble <i class="bi bi-arrow-up-right fw-semibold"></i></a>
+                    </div>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="card border-0 shadow">
+                    <img src="./public/images/AppDashboard.png" alt="" class="img-fluid">
+                    <div class="card-body">
+                       <h5 class="fw-semibold">App Dashboard</h5>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                       <a href="#" target="_blank" class="btn p-0 fw-semibold border-0 rounded-0 border-bottom border-primary pb-1">View In Dribbble <i class="bi bi-arrow-up-right fw-semibold"></i></a>
+                    </div>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="card border-0 shadow">
+                    <img src="./public/images/EasyRent.png" alt="" class="img-fluid">
+                    <div class="card-body">
+                       <h5 class="fw-semibold">Easy Rent</h5>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                       <a href="#" target="_blank" class="btn p-0 fw-semibold border-0 rounded-0 border-bottom border-primary pb-1">View In Dribbble <i class="bi bi-arrow-up-right fw-semibold"></i></a>
+                    </div>
+                  </div>
+               </div>
+             </div>
+           </div>
+        </section>
+        <!-- MY PORTFOLIO -->
+
+        <!-- TESTIMONIAL -->
+        <section class="testimonials h-100 py-5 mt-5 section-bg" id="testimonials">
+            <div class="container">
+              <div class="testimonials-title pt-5">
+                <p class="fw-semibold" data-aos="fade-right">Clients Feedback</p>
+                <h1 class="fw-bold" data-aos="fade-right">Customer testimonials</h1>
+              </div>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 mt-5 pb-5 ">
+                <div class="col">
+                   <div class="card border-success bg-transparent" data-aos="zoom-in">
+                     <div class="card-body">
+                      <div class="testimonials-icon mb-3">
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                       </div>
+                       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra.</p>
+                       <div class="profile-items d-flex align-items-center mt-3">
+                          <img src="./public/images/Dianne.png" alt="Avatar image" class="profile me-3">
+                          <div class="profile-content mt-3">
+                             <h6 class="fw-semibold">Dianne Russell</h6>
+                             <p class="fw-normal">Starbucks</p>
+                          </div>
+                       </div>
+                     </div>
+                   </div>
+                </div>
+                <div class="col">
+                   <div class="card border-success bg-transparent" data-aos="zoom-in">
+                     <div class="card-body">
+                       <div class="testimonials-icon mb-3">
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                       </div>
+                       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra.</p>
+                       <div class="profile-items d-flex align-items-center mt-3">
+                          <img src="./public/images/Kristin.png" alt="Avatar image" class="profile me-3">
+                          <div class="profile-content mt-3">
+                             <h6 class="fw-semibold">Kristin Watson</h6>
+                             <p class="fw-normal">Louis Vuitton</p>
+                          </div>
+                       </div>
+                     </div>
+                   </div>
+                </div>
+                <div class="col">
+                   <div class="card border-success bg-transparent" data-aos="zoom-in">
+                     <div class="card-body">
+                       <div class="testimonials-icon mb-3">
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                        <i class="bi bi-star-fill text-success"></i>
+                       </div>
+                       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra.</p>
+                       <div class="profile-items d-flex align-items-center mt-3">
+                          <img src="./public/images/Kathryn.png" alt="Avatar image" class="profile me-3">
+                          <div class="profile-content mt-3">
+                             <h6 class="fw-semibold">Kathryn Murphy</h6>
+                             <p class="fw-normal">McDonald's</p>
+                          </div>
+                       </div>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <!-- TESTIMONIAL -->
+
+        <!-- CONTACT ME -->
+        <section class="contact h-100 py-5 mt-5" id="contact">
+            <div class="container">
+             <div class="testimonials-title text-center">
+               <p class="fw-semibold">Get In Touch</p>
+               <h1 class="fw-bold mb-3">Contact me</h1>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+             </div>
+                <div class="row row-cols-1 d-flex justify-content-center mt-5">
+                   <div class="col-12 col-lg-8">
+                       <form action="#" method="get">
+                         <div class="row">
+                           <div class="col-12 col-md-6">
+                             <label for="firstName" class="form-label">First Name</label>
+                             <input type="text" class="form-control btn-outline-primary" aria-label="First name" id="firstName">
+                           </div>
+                           <div class="col-12 col-md-6 mt-3 mt-md-0">
+                             <label for="lastName" class="form-label">Last Name</label>
+                             <input type="text" class="form-control btn-outline-primary" aria-label="Last name" id="lastName">
+                           </div>
+                         </div>
+                         <div class="row mt-3">
+                           <div class="col-12 col-md-6">
+                             <label for="email" class="form-label">Email</label>
+                             <input type="email" class="form-control btn-outline-primary" aria-label="Email" id="email">
+                           </div>
+                           <div class="col-12 col-md-6 mt-3 mt-md-0">
+                             <label for="phoneNumber" class="form-label">Phone Number</label>
+                             <input type="number" class="form-control btn-outline-primary" aria-label="Phone number" id="phoneNumber">
+                           </div>
+                         </div>
+                         <div class="col-12 mt-4">
+                           <label for="inputState" class="form-label">Choose a topic</label>
+                           <select id="inputState" class="form-select btn-outline-primary">
+                             <option selected>Select one...</option>
+                             <option>...</option>
+                           </select>
+                         </div>
+                         <div class="col-12 mt-4">
+                           <label for="message" class="form-label">Message</label>
+                           <textarea name="text" id="message"  class="form-control btn-outline-primary" aria-label="With textarea" style="height: 180px" placeholder="Type your message..."></textarea>
+                         </div>
+                          <div class="col-12 mt-4">
+                           <input class="form-check-input btn-outline-primary" type="checkbox" value="" id="flexCheckChecked"> 
+                           <label class="form-check-label" for="flexCheckChecked">
+                             I accept the terms
+                           </label>
+                          </div>
+                          <div class="col-12 mt-4 d-flex justify-content-center align-items-center">
+                           <button type="submit" class="btn btn-primary px-4">Submit</button>
+                         </div>
+                       </form>
+                   </div>
+                </div>
+            </div>
+        </section>
+        <!-- CONTACT ME -->
+    </main>
+    <!-- MAIN -->
+
+    <footer class="footer h-100 py-5 mt-5 section-bg">
+        <div class="container">
+          <div class="row py-4 d-sm-flex justify-content-sm-center align-items-sm-center justify-content-center align-items-center">
+            <div class="col-lg-2 col-sm-5 col-6">
+              <a class="navbar-brand" href="#"><img src="./public/images/Logo.png" class="w-100 mb-3"></a>
+            </div>
+            <div class="col-lg-8">
+              <div class="footer-top-nav">
+                <ul class="nav mb-3 mb-lg-0 d-flex justify-content-center align-items-center">
+                  <li class="nav-item me-2">
+                    <a class="nav-link" aria-current="page" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item me-2">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                  </li>
+                  <li class="nav-item me-2">
+                    <a class="nav-link" href="#about-me">About me</a>
+                  </li>
+                  <li class="nav-item me-2">
+                    <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#testimonials">Testimonials</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#testimonials">Portfolio</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="footer-icons d-flex justify-content-center align-items-center">
+                <a href="#" target="_blank" class="m-2"><img src="./public/images/Facebook.png" alt="social-icons"></a>
+                <a href="#" target="_blank" class="m-2"><img src="./public/images/instagram.png" alt="social-icons"></a>
+                <a href="#" target="_blank" class="m-2"><img src="./public/images/twitter.png" alt="social-icons"></a>
+                <a href="#" target="_blank" class="m-2"><img src="./public/images/linkedin.png" alt="social-icons"></a>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row py-3">
+            <div class="col-12 col-lg-6">
+              <div class="footer-bottom-text">
+                <p class="fw-medium text-center text-lg-start">Made with 💖 by Virus Found</p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="footer-nav">
+                <ul class="nav mb-2 mb-lg-0 d-flex justify-content-lg-end justify-content-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Privacy Policy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Terms of Service</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Cookies Settings</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+    </footer>
+    
 
+    <script src="./js/landing.js"></script>
 
-
-    <section class="hero-section">
-        <!-- Left side content -->
-        <div class="hero-text">
-            <h2>Hey, I am John</h2>
-            <h1>I create <span class="highlight">product design</span> and brand experience</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-            <a href="#" class="cta-button">Get In Touch</a>
-        </div>
-
-        <!-- Right side image -->
-        <div class="hero-image">
-            <img src="https://via.placeholder.com/400x400" alt="John's Portrait">
-            <!-- Decorative icons -->
-            <span class="decorative-icon icon-top-left">✨</span>
-            <span class="decorative-icon icon-bottom-right">✨</span>
-        </div>
-    </section>
-
-
-
-
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script>
-        /* Functions to open and close the overlay sidebar */
-        function openNav() {
-            document.getElementById("myNav").style.width = "100%";
-        }
-
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0";
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

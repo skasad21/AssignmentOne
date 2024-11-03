@@ -6,12 +6,41 @@
 1. Button CSS
 ------------------------------------------*/
 
-/* Custom color for the button outline */
+/* Custom Navbar Styles */
 .btn-custom-outline {
-    color: #5E3BEE;
-    border-color: #5E3BEE;
+    color: var(--brightblue);
+    border-color: var(--brightblue);
 }
+
 .btn-custom-outline:hover {
-    background-color: #5E3BEE;
-    color: #fff;
+    background-color: var(--brightblue);
+    color: var(--white);
 }
+
+  /* <!-- ==============Botton style color================= --> */
+  .text-primary{
+    color: var(--brightblue) !important;
+  }
+  .btn-primary{
+    border: 1px solid var(--brightblue);
+    background-color: var(--brightblue) !important;
+    color: #ffffff !important;
+  }
+  .btn-primary:hover{
+    border: 1px solid var(--brightblue);
+    color: var(--brightblue) !important;
+    background-color: transparent !important;
+  
+  }
+  .btn-outline-primary{
+    border: 1px solid var(--brightblue);
+    color: var(--brightblue);
+  }
+  .btn-outline-primary:hover{
+    background-color: var(--brightblue);
+    color: #ffffff !important;
+  }
+  .border-primary{
+   border-bottom: 2px solid var(--brightblue) !important;
+   transition: 2s all ease-in;
+  }
