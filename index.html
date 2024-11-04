@@ -31,16 +31,16 @@
                 <div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="#hero">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Portfolio</a>
+                            <a class="nav-link" href="#portfolio">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Me</a>
+                            <a class="nav-link" href="#aboutme">About Me</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Testimonial</a>
+                            <a class="nav-link" href="#testimonial">Testimonial</a>
                         </li>
                     </ul>
                 </div>
@@ -59,7 +59,7 @@
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="close_btn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
-                <a href="#">Home</a>
+                <a href="#hero">Home</a>
                 <a href="#">Portfolio</a>
                 <a href="#">About Me</a>
                 <a href="#">Testimonial</a>
@@ -72,7 +72,7 @@
     <!-- MAIN -->
     <main>
         <!-- HERO -->
-        <section class="home h-100 py-5 section-bg mt-md-0 mt-sm-0" id="home">
+        <section class="home py-5 section-bg mt-md-0 mt-sm-0" id="hero">
             <div class="container">
                 <div class="row row-cols-1 row-cols-lg-2 row-cols-md-2 g-3 gy-sm-5 d-flex justify-content-center align-items-center py-5">
                     <div class="col">
@@ -96,7 +96,7 @@
         <!-- HERO -->
 
         <!-- MY EXPERTISE -->
-        <section class="icon-section h-100 py-5 mt-5">
+        <section class="my-expertise h-100 py-5 mt-5">
             <div class="container">
                 <div class="icons-title">
                     <p class="fw-semibold fade-in">My Skills</p>
@@ -161,7 +161,7 @@
         <!-- MY EXPERTISE -->
 
         <!-- ABOUT ME -->
-        <section class="about-me h-100 py-5 mt-5" id="about-me">
+        <section class="about-me h-100 py-5 mt-5" id="aboutme">
             <div class="container">
                 <div class="row row-cols-1 row-cols-lg-2 row-cols-md-2 g-3 gy-sm-5 d-flex justify-content-center align-items-center">
                     <div class="col">
@@ -233,7 +233,7 @@
         <!-- MY PORTFOLIO -->
 
         <!-- TESTIMONIAL -->
-        <section class="testimonials h-100 py-5 mt-5 section-bg" id="testimonials">
+        <section class="testimonials h-100 py-5 mt-5 section-bg" id="testimonial">
             <div class="container">
               <div class="testimonials-title pt-5">
                 <p class="fw-semibold" data-aos="fade-right">Clients Feedback</p>
@@ -342,8 +342,14 @@
                          <div class="col-12 mt-4">
                            <label for="inputState" class="form-label">Choose a topic</label>
                            <select id="inputState" class="form-select btn-outline-primary">
-                             <option selected>Select one...</option>
-                             <option>...</option>
+                              <option selected>Select one...</option>
+                              <option value="web-design">Web Design</option>
+                              <option value="graphic-design">Graphic Design</option>
+                              <option value="ui-ux">UI/UX</option>
+                              <option value="branding">Branding</option>
+                              <option value="development">Development</option>
+                              <option value="marketing">Marketing</option>
+                              <option value="seo">SEO</option>  
                            </select>
                          </div>
                          <div class="col-12 mt-4">

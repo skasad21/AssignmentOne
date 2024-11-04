@@ -13,7 +13,9 @@
 /*-------------------------------------------------
     2. Page Css
 --------------------------------------------------*/
-
+/* .home{
+  min-height: 100vh;
+} */
 
 /* Overlay Sidebar for Mobile */
 .overlay {
@@ -61,23 +63,22 @@
     cursor: pointer;
 }
 /* Overlay Sidebar for Mobile */
-
   .active{
     color: var(--brightblue) !important;
   }
+
   .nav-link:hover{
     color: var(--brightblue) !important;
   }
-  /* <!-- ==============background color================= --> */
+
   .section-bg{
     background-color: #F5FCFF !important;
   }
 
-  /* <!-- ==============card icon SECTION================= --> */
-  .icon-section .card:hover{
+  .my-expertise .card:hover{
     border-bottom: 2px solid var(--brightblue) !important;
   }
-  /* ==============Portfolio SECTION=================  */
+
   .btn-danger{
     background-color: #E62872 !important;
   }
@@ -86,7 +87,7 @@
     height: 20px;
     margin-right: 4px;
   }
-  /* <!-- ==============Testimonials SECTION================= --> */
+
   .testimonials .profile{
     width: 60px;
     height: 60px;
@@ -105,10 +106,10 @@
 
 
   .footer-top-nav .nav-link{
-    color: #1C1E53 !important;
+    color: var(--kindablue) !important;
   }
 
   .footer-nav .nav-link{
-    color: #1C1E53 !important;
+    color: var(--kindablue) !important;
   }
 
